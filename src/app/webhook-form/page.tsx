@@ -47,7 +47,6 @@ function Page() {
       webhookUrl: "",
     },
   });
-
   const { formState: { errors } } = form;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -63,7 +62,7 @@ function Page() {
 
     setIsSubmitting(true);
     setErrorMessage(null); // Reset error message
-
+    
     try {
       const dataObj = {
         owner : data.owner,
@@ -81,7 +80,7 @@ function Page() {
       // });
       const res = await axios.post("/api/greet",dataObj);
         
-      console.log("Webhook created successfully:", res.data);
+      console.log("Webhook created successfully and this is its data:", res.data);
     } catch (error) {
       console.error("Error creating webhook here:", error);
       setErrorMessage("Failed to create webhook. Please try again.");
