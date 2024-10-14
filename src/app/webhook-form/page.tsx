@@ -80,7 +80,7 @@ function Page() {
       // });
       const res = await axios.post("/api/greet",dataObj);
         
-      console.log("Webhook created successfully and this is its data and it is absolutely corrected:", res.data);
+      console.log("Webhoo k created successfully and this is its data and it is absolutely corrected:", res.data);
     } catch (error) {
       console.error("Error creating webhook here:", error);
       setErrorMessage("Failed to create webhook. Please try again.");
