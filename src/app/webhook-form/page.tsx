@@ -47,7 +47,6 @@ function Page() {
       webhookUrl: "",
     },
   });
-
   const { formState: { errors } } = form;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -63,7 +62,7 @@ function Page() {
 
     setIsSubmitting(true);
     setErrorMessage(null); // Reset error message
-
+    
     try {
       const dataObj = {
         owner : data.owner,
@@ -81,15 +80,18 @@ function Page() {
       // });
       const res = await axios.post("/api/greet",dataObj);
         
-      console.log("Webhook created successfully:", res.data);
+      console.log("Webh oo k created succ essfully and this is i ts da ta and it is absolutel y correc ted:", res.data);
     } catch (error) {
-      console.error("Error creating webhook here:", error);
+      console.error("Er r o r creatin g webhook here:", error);
       setErrorMessage("Failed to create webhook. Please try again.");
     } finally {
       setIsSubmitting(false);
+      
     }
+    console.log("getting work done in the repo and pushing code in branch hanuman then author sends pull req")
+    
   };
-
+ 
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-fit p-10 bg-slate-200 shadow-lg rounded-md">
