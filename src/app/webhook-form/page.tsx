@@ -86,10 +86,10 @@ function Page() {
       setErrorMessage("Failed to create webhook. Please try again.");
     } finally {
       setIsSubmitting(false);
-      console.log("getting work done")
+      
     }
   };
-  console.log("I created a pull req from main branch and now in hanuman named branch i am adding code ")
+ 
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-fit p-10 bg-slate-200 shadow-lg rounded-md">
