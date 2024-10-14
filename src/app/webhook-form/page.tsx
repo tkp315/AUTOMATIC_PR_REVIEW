@@ -82,7 +82,7 @@ function Page() {
         
       console.log("Webh oo k created successfully and this is its data and it is absolutely corrected:", res.data);
     } catch (error) {
-      console.error("Erro r creating webhook here:", error);
+      console.error("Err o r creating webhook here:", error);
       setErrorMessage("Failed to create webhook. Please try again.");
     } finally {
       setIsSubmitting(false);
