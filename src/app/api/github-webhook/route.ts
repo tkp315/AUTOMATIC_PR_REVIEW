@@ -26,6 +26,9 @@ export async function POST(req: NextRequest) {
             // You might want to post this review back to the PR as a comment
             // This part of the code will depend on how you handle comments in your GitHub repo
             // await postCommentToPR(prData.number, aiReview);
+            if(!aiReview){
+                console.log("it is not received")
+            }
 
             return NextResponse.json({ message: "Pull request processed successfully", aiReview });
         } catch (error) {
