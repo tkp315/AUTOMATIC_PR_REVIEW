@@ -89,7 +89,7 @@ function Page() {
       console.log("getting work done")
     }
   };
-   console.log("i pulled req and creating the commit in the repo ")
+  console.log("I created a pull req from main branch and now in hanuman named branch i am adding code ")
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-fit p-10 bg-slate-200 shadow-lg rounded-md">
