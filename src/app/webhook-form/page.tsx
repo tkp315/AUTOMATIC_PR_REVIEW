@@ -89,7 +89,7 @@ function Page() {
       console.log("getting work done")
     }
   };
-   console.log("Here I am changing the file and commiting the changes in repo: Automatic_PR_Review")
+   console.log("i pulled req and creating the commit in the repo ")
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-fit p-10 bg-slate-200 shadow-lg rounded-md">
