@@ -86,6 +86,7 @@ function Page() {
       setErrorMessage("Failed to create webhook. Please try again.");
     } finally {
       setIsSubmitting(false);
+      console.log("getting work done")
     }
   };
 
