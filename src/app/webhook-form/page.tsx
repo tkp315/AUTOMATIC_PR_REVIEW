@@ -65,13 +65,21 @@ function Page() {
     setErrorMessage(null); // Reset error message
 
     try {
+      const dataObj = {
+        owner : data.owner,
+        repo : data.repo,
+        webhookUrl : data.webhookUrl,
+        accessToken:session.accessToken
+
+      }
       // Send a POST request to create the webhook
-      const res = await axios.post("/api/webhook", { ...data, accessToken: session.accessToken }, {
-        headers: {
-          Authorization: `Bearer ${session.accessToken}`, // Pass the token in the Authorization header
-          "Content-Type": "application/json",
-        },
-      });
+      // const res = await axios.post("/api/create-webhook", { ...data, accessToken: session.accessToken }, {
+      //   headers: {
+      //     Authorization: `Bearer ${session.accessToken}`, // Pass the token in the Authorization header
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      const res = await axios.post("/api/greet",dataObj);
         
       console.log("Webhook created successfully:", res.data);
     } catch (error) {

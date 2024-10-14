@@ -54,6 +54,7 @@ export async function POST(req: NextRequest) {
         Accept: 'application/vnd.github+json',
       },
     });
+    console.log(response)
 
     // Return a success response with the data
     return NextResponse.json({ message: 'Webhook created successfully', data: response.data }, { status: 200 });

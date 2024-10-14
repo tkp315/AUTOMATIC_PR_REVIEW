@@ -1,4 +1,3 @@
-// pages/api/auth/[...nextauth].ts
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 
@@ -7,6 +6,11 @@ export const authOptions: NextAuthOptions = {
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+     authorization:{
+      params:{
+        scope:'repo'
+      }
+     }
     }),
   ],
   secret: process.env.NEXT_SECRET,
@@ -16,15 +20,15 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ session, token }) {
       // Add the access token to the session
-      session.accessToken = token.accessToken; // Ensure you access the accessToken
+      session.accessToken = token.accessToken;
       return session;
     },
     async jwt({ token, account }) {
-      // If account is available, it means this is the first time the user is logging in
+      // If the account exists, set the access token
       if (account) {
-        token.accessToken = account.access_token; // Set the access token when the account is created
+        token.accessToken = account.access_token;
       }
-      return token; // Always return the token
+      return token;
     },
   },
 };
